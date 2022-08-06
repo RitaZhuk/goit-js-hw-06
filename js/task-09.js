@@ -17,11 +17,13 @@ const changeColorBtn = document.querySelector('.change-color')
 const colorValue = document.querySelector('.color')
 const bodyEl = document.querySelector('body')
 
+
 colorValue.textContent = '#ffffff'
 changeColorBtn.addEventListener('click', onChangeColorBtn)
 function onChangeColorBtn(event) {
   event.preventDefault()
-  bodyEl.style.backgroundColor = getRandomHexColor()
-  colorValue.innerHTML = `${getRandomHexColor}`
-  console.log(getRandomHexColor());
+const newColor = getRandomHexColor()
+  bodyEl.style.backgroundColor = newColor
+  colorValue.innerHTML = `${newColor}`
+  console.log(newColor());
 }
