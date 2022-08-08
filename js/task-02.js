@@ -14,11 +14,17 @@ const ingredients = [
 // После чего вставит все <li> за одну операцию в список ul#ingredients.
 
 const ulEl = document.querySelector('#ingredients');
-const liEl = document.createElement('li');
-liEl.classList.add('item');
-liEl.textContent = ingredients;
-const list = ingredients.reduce((str, item) => str + `${item}`, '');
+
+const elementRef = ingredients.map(element => {
+  const itemRef = document.createElement('li');
+  itemRef.textContent = element;
+  return itemRef;
+}
+  )
+  ulEl.append(...elementRef)
 
 
-console.log(liEl);
+
+
+
 

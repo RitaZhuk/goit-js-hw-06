@@ -2,7 +2,7 @@
 // Добавь слушатели кликов на кнопки, внутри которых увеличивай или уменьшай значение счтетчика.
 // Обновляй интерфейс новым значением переменной counterValue.
 
-let valueEl = Number(document.querySelector('#value').textContent);
+let valueEl = 0;
 
 let counterValue = document.querySelector('#value');
 

@@ -19,14 +19,15 @@ const images = [
 
 // Все элементы галереи должны добавляться в DOM за одну операцию вставки.
 // Добавь минимальное оформление галереи флексбоксами или гридами через CSS классы.
-const ulEl = document.querySelector(".gallery");
 
-images.forEach(el => {
-  ulEl.insertAdjacentHTML(
-    'afterbegin',
-    `<li><img src = "${el.url}" alt = "${el.alt}"/></li>`,
-  );
-});
+const galleryEl = document.querySelector('.gallery');
+
+const markupGallery = images
+  .map(({ url, alt }) => 
+  `<li class='gallery__item'><img src="${url}" alt="${alt}"></li>`)
+  .join("");
+
+galleryEl.insertAdjacentHTML("beforeend", markupGallery);
 
 
 
